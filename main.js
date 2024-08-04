@@ -24,6 +24,6 @@ async function main() {
         console.log(`server: http://localhost:${port}`);
     });
 }
-module.exports = app;
+
 main();
 
