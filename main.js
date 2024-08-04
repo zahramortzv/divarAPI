@@ -6,7 +6,7 @@ const NotFoundHandler = require("./src/common/exception/not-found.handler");
 const AllExceptionHandler = require("./src/common/exception/all-exception.handler");
 const cors = require("cors");
 dotenv.config();
-async function main () {
+async function main() {
     const app = express();
     const port = process.env.PORT;
     require("./src/config/mongoose.config");
@@ -14,7 +14,7 @@ async function main () {
         origin: "*"
     }));
     app.use(express.json());
-    app.use(express.urlencoded({extended: true}));
+    app.use(express.urlencoded({ extended: true }));
     app.use(express.static("public"));
     app.use(mainRouter);
     SwaggerConfig(app);
@@ -24,4 +24,6 @@ async function main () {
         console.log(`server: http://localhost:${port}`);
     });
 }
+module.exports = app;
 main();
+
